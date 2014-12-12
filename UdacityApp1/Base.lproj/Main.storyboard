@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bNw-4g-gy5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Record-->
@@ -114,40 +113,74 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="39" y="106" width="78" height="78"/>
+                                    <rect key="frame" x="83" y="112" width="78" height="78"/>
                                 </variation>
                                 <connections>
-                                    <action selector="PlaySlowAudio:" destination="9bV-Eg-N6y" eventType="touchUpInside" id="mhf-q2-5PR"/>
+                                    <action selector="PlayAudioSLow:" destination="9bV-Eg-N6y" eventType="touchUpInside" id="1Tk-FO-5eP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oq-P8-KL2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Fast Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="208" y="112" width="78" height="78"/>
+                                </variation>
+                                <connections>
+                                    <action selector="PlayAudioFast:" destination="9bV-Eg-N6y" eventType="touchUpInside" id="zKF-KW-Bca"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9j-cf-sSe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Stop button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StopPlayback:" destination="9bV-Eg-N6y" eventType="touchUpInside" id="atS-gt-KQL"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I27-xC-thc" firstAttribute="leading" secondItem="ifd-K9-32A" secondAttribute="leadingMargin" constant="23" id="qRo-ee-tVk"/>
-                            <constraint firstItem="I27-xC-thc" firstAttribute="top" secondItem="2dD-OB-PGz" secondAttribute="bottom" constant="42" id="zge-Bm-68q"/>
+                            <constraint firstAttribute="centerY" secondItem="I27-xC-thc" secondAttribute="centerY" constant="149" id="4GZ-DS-hTC"/>
+                            <constraint firstItem="0Oq-P8-KL2" firstAttribute="leading" secondItem="I27-xC-thc" secondAttribute="trailing" constant="47" id="UTs-1K-uBe"/>
+                            <constraint firstAttribute="centerX" secondItem="k9j-cf-sSe" secondAttribute="centerX" constant="10" id="Ul8-WP-lgc"/>
+                            <constraint firstAttribute="centerY" secondItem="k9j-cf-sSe" secondAttribute="centerY" constant="-226" id="Z1O-52-ITr"/>
+                            <constraint firstAttribute="centerX" secondItem="I27-xC-thc" secondAttribute="centerX" constant="78" id="iY0-hj-UQk"/>
+                            <constraint firstAttribute="centerY" secondItem="0Oq-P8-KL2" secondAttribute="centerY" constant="149" id="l6b-bG-jYk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="I27-xC-thc"/>
+                                <exclude reference="0Oq-P8-KL2"/>
+                                <exclude reference="k9j-cf-sSe"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="qRo-ee-tVk"/>
-                                <exclude reference="zge-Bm-68q"/>
+                                <exclude reference="4GZ-DS-hTC"/>
+                                <exclude reference="iY0-hj-UQk"/>
+                                <exclude reference="UTs-1K-uBe"/>
+                                <exclude reference="l6b-bG-jYk"/>
+                                <exclude reference="Ul8-WP-lgc"/>
+                                <exclude reference="Z1O-52-ITr"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="I27-xC-thc"/>
+                                <include reference="0Oq-P8-KL2"/>
+                                <include reference="k9j-cf-sSe"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="qRo-ee-tVk"/>
-                                <include reference="zge-Bm-68q"/>
+                                <include reference="4GZ-DS-hTC"/>
+                                <include reference="iY0-hj-UQk"/>
+                                <include reference="UTs-1K-uBe"/>
+                                <include reference="l6b-bG-jYk"/>
+                                <include reference="Ul8-WP-lgc"/>
+                                <include reference="Z1O-52-ITr"/>
                             </mask>
                         </variation>
                     </view>
-                    <connections>
-                        <outlet property="PlaybackSlow" destination="I27-xC-thc" id="6jR-xv-ED0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WBo-zJ-m1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,6 +206,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fast Button" width="100" height="100"/>
         <image name="Image" width="100" height="100"/>
         <image name="Slow button" width="100" height="100"/>
         <image name="Stop button" width="50" height="50"/>
