@@ -21,32 +21,72 @@
                                 <state key="normal" image="Image">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZFb-tW-FDZ"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0B-gZ-ILe">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aj2-da-Bke">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Stop button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9Db-5z-kBF"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.22809021918651057" green="0.79217960858585856" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="gHR-qY-Pwt" secondAttribute="centerY" id="1Vc-EH-nXg"/>
+                            <constraint firstAttribute="centerY" secondItem="Y0B-gZ-ILe" secondAttribute="centerY" constant="-90" id="2Er-eh-nfd"/>
+                            <constraint firstAttribute="centerY" secondItem="Aj2-da-Bke" secondAttribute="centerY" constant="-245" id="7AU-s9-dMg"/>
                             <constraint firstAttribute="centerX" secondItem="gHR-qY-Pwt" secondAttribute="centerX" id="c5y-co-w1m"/>
+                            <constraint firstItem="Aj2-da-Bke" firstAttribute="top" secondItem="gHR-qY-Pwt" secondAttribute="bottom" constant="170" id="gd1-CD-iof"/>
+                            <constraint firstAttribute="centerX" secondItem="Y0B-gZ-ILe" secondAttribute="centerX" constant="-0.5" id="lW9-aI-HV8"/>
+                            <constraint firstAttribute="centerX" secondItem="Aj2-da-Bke" secondAttribute="centerX" id="qgm-VA-l1C"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="gHR-qY-Pwt"/>
+                                <exclude reference="Y0B-gZ-ILe"/>
+                                <exclude reference="Aj2-da-Bke"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1Vc-EH-nXg"/>
                                 <exclude reference="c5y-co-w1m"/>
+                                <exclude reference="2Er-eh-nfd"/>
+                                <exclude reference="lW9-aI-HV8"/>
+                                <exclude reference="7AU-s9-dMg"/>
+                                <exclude reference="gd1-CD-iof"/>
+                                <exclude reference="qgm-VA-l1C"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="gHR-qY-Pwt"/>
+                                <include reference="Y0B-gZ-ILe"/>
+                                <include reference="Aj2-da-Bke"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1Vc-EH-nXg"/>
                                 <include reference="c5y-co-w1m"/>
+                                <include reference="2Er-eh-nfd"/>
+                                <include reference="lW9-aI-HV8"/>
+                                <include reference="7AU-s9-dMg"/>
+                                <include reference="gd1-CD-iof"/>
+                                <include reference="qgm-VA-l1C"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordingLabel" destination="Y0B-gZ-ILe" id="9Ra-1J-ukF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,5 +94,6 @@
     </scenes>
     <resources>
         <image name="Image" width="100" height="100"/>
+        <image name="Stop button" width="50" height="50"/>
     </resources>
 </document>
