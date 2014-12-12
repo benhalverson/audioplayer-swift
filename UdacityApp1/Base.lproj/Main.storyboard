@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bNw-4g-gy5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="UdacityApp1" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,6 +39,7 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9Db-5z-kBF"/>
+                                    <segue destination="9bV-Eg-N6y" kind="show" id="d9q-vq-Q4F"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,16 +86,95 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Record" id="Tbw-vu-2Ii"/>
                     <connections>
+                        <outlet property="RecordButton" destination="gHR-qY-Pwt" id="SDd-XP-Kvc"/>
+                        <outlet property="StopButton" destination="Aj2-da-Bke" id="dA7-JB-wR1"/>
                         <outlet property="recordingLabel" destination="Y0B-gZ-ILe" id="9Ra-1J-ukF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="666" y="286"/>
+        </scene>
+        <!--Play Sounds View Controller-->
+        <scene sceneID="U1s-5w-zIq">
+            <objects>
+                <viewController id="9bV-Eg-N6y" customClass="PlaySoundsViewController" customModule="UdacityApp1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2dD-OB-PGz"/>
+                        <viewControllerLayoutGuide type="bottom" id="qve-2L-zRH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ifd-K9-32A">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I27-xC-thc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Slow button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="39" y="106" width="78" height="78"/>
+                                </variation>
+                                <connections>
+                                    <action selector="PlaySlowAudio:" destination="9bV-Eg-N6y" eventType="touchUpInside" id="mhf-q2-5PR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I27-xC-thc" firstAttribute="leading" secondItem="ifd-K9-32A" secondAttribute="leadingMargin" constant="23" id="qRo-ee-tVk"/>
+                            <constraint firstItem="I27-xC-thc" firstAttribute="top" secondItem="2dD-OB-PGz" secondAttribute="bottom" constant="42" id="zge-Bm-68q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="I27-xC-thc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="qRo-ee-tVk"/>
+                                <exclude reference="zge-Bm-68q"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="I27-xC-thc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="qRo-ee-tVk"/>
+                                <include reference="zge-Bm-68q"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="PlaybackSlow" destination="I27-xC-thc" id="6jR-xv-ED0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WBo-zJ-m1z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1486.5" y="286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ivy-3u-FQs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bNw-4g-gy5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8WE-Vj-Eas">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="EGp-Lc-vR1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iu5-Nb-dpb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-27" y="286"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image" width="100" height="100"/>
+        <image name="Slow button" width="100" height="100"/>
         <image name="Stop button" width="50" height="50"/>
     </resources>
 </document>
