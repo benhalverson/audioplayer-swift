@@ -13,6 +13,8 @@
 		B540EFB41A3A5BE70086746C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B540EFB31A3A5BE70086746C /* Images.xcassets */; };
 		B540EFB71A3A5BE70086746C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B540EFB51A3A5BE70086746C /* LaunchScreen.xib */; };
 		B540EFC31A3A5BE70086746C /* UdacityApp1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EFC21A3A5BE70086746C /* UdacityApp1Tests.swift */; };
+		B540EFCD1A3AA74B0086746C /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B540EFCC1A3AA74B0086746C /* PlaySoundsViewController.swift */; };
+		B540EFCF1A3AADBD0086746C /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B540EFCE1A3AADBD0086746C /* movie_quote.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		B540EFBC1A3A5BE70086746C /* UdacityApp1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UdacityApp1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B540EFC11A3A5BE70086746C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B540EFC21A3A5BE70086746C /* UdacityApp1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UdacityApp1Tests.swift; sourceTree = "<group>"; };
+		B540EFCC1A3AA74B0086746C /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		B540EFCE1A3AADBD0086746C /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = movie_quote.mp3; path = ../movie_quote.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			children = (
 				B540EFAC1A3A5BE70086746C /* AppDelegate.swift */,
 				B540EFAE1A3A5BE70086746C /* ViewController.swift */,
+				B540EFCC1A3AA74B0086746C /* PlaySoundsViewController.swift */,
 				B540EFB01A3A5BE70086746C /* Main.storyboard */,
 				B540EFB31A3A5BE70086746C /* Images.xcassets */,
 				B540EFB51A3A5BE70086746C /* LaunchScreen.xib */,
@@ -90,6 +95,7 @@
 		B540EFAA1A3A5BE70086746C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B540EFCE1A3AADBD0086746C /* movie_quote.mp3 */,
 				B540EFAB1A3A5BE70086746C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -194,6 +200,7 @@
 			files = (
 				B540EFB21A3A5BE70086746C /* Main.storyboard in Resources */,
 				B540EFB71A3A5BE70086746C /* LaunchScreen.xib in Resources */,
+				B540EFCF1A3AADBD0086746C /* movie_quote.mp3 in Resources */,
 				B540EFB41A3A5BE70086746C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B540EFAF1A3A5BE70086746C /* ViewController.swift in Sources */,
+				B540EFCD1A3AA74B0086746C /* PlaySoundsViewController.swift in Sources */,
 				B540EFAD1A3A5BE70086746C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +413,7 @@
 				B540EFC81A3A5BE70086746C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B540EFC91A3A5BE70086746C /* Build configuration list for PBXNativeTarget "UdacityApp1Tests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +422,7 @@
 				B540EFCB1A3A5BE70086746C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
